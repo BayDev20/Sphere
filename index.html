@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebGL Subdivided Sphere</title>
+    <style>
+        /* Basic styles for the body to center the card in the viewport */
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f4f4f4;
+        }
+
+        /* Styles for the card container */
+        .card {
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            max-width: 800px;
+            width: 100%;
+            text-align: center;
+        }
+
+        /* Styling the canvas element for WebGL rendering */
+        canvas {
+            border: 1px solid black;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+
+        /* Styling the controls container */
+        #controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+
+        /* Styling the zoom slider */
+        #zoomSlider {
+            width: 300px;
+            margin-bottom: 10px;
+        }
+
+        /* Styling the button with a hover effect */
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        /* Change button color on hover */
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        /* Styling for the instructions and description sections */
+        .instructions, .description {
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Card container that holds all content -->
+    <div class="card">
+        <!-- Title of the card -->
+        <h1>WebGL Subdivided Sphere Viewer</h1>
+        <!-- Canvas element where the WebGL sphere will be rendered -->
+        <canvas id="glCanvas" width="600" height="600"></canvas>
+        <!-- Controls for interacting with the sphere (zoom and color change) -->
+        <div id="controls">
+            <!-- Slider for zooming in and out of the sphere -->
+            <input type="range" id="zoomSlider" min="1" max="100" value="50">
+            <!-- Button to change the colors of the sphere -->
+            <button id="changeColorButton">Change Colors</button>
+        </div>
+        <!-- Instructions on how to use the viewer -->
+        <div class="instructions">
+            <h2>Instructions</h2>
+            <p>Use your mouse to click and drag the sphere to rotate it in 3D space. Use the slider to zoom in and out. Click the "Change Colors" button to randomize the colors of the sphere's triangles and edges.</p>
+        </div>
+        <!-- Explanation of what the sphere is and how it is made -->
+        <div class="description">
+            <h2>About the Sphere</h2>
+            <p>This interactive 3D sphere is created using WebGL and represents a recursively subdivided polyhedron. The base shape is a tetrahedron, and each triangular face is subdivided recursively to approximate a sphere. This process, known as subdivision, results in a smooth, rounded shape made up of many smaller triangles.</p>
+        </div>
+    </div>
+    <!-- External script for matrix operations used by WebGL -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gl-matrix/2.8.1/gl-matrix-min.js"></script>
+    <!-- Custom script for rendering the WebGL sphere and handling interactions -->
+    <script src="app.js"></script>
+</body>
+</html>
