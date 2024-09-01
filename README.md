@@ -36,13 +36,13 @@ To run this project locally, follow these steps:
 1. **Clone the repository:**
 
    ```bash
-   git clone https://github.com/your-username/webgl-sphere-viewer.git
+   git clone https://github.com/BayDev20/Sphere
    ```
 
 2. **Open the project directory**
 
    ```bash
-   cd webgl-sphere-viewer
+   cd Sphere
    ```
 
 3. Run on a local server 
